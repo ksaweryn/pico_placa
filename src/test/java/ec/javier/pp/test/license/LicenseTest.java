@@ -1,6 +1,5 @@
 /**
  * Class LicenseTest.java created 13 Mar 2018
- * Copyright javier All rights reserved
  */
 package ec.javier.pp.test.license;
 
@@ -12,7 +11,7 @@ import org.junit.Test;
 import ec.javier.pp.license.License;
 
 /**
- * @author javier
+ * @author Javier Borja
  *
  */
 public class LicenseTest {
@@ -22,7 +21,6 @@ public class LicenseTest {
 	@Before
 	public void initializer() {
 		license = "POK0808";
-
 	}
 
 	@Test

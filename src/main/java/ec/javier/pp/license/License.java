@@ -1,12 +1,11 @@
 /**
  * Class License.java created 13 Mar 2018
- * Copyright javier All rights reserved
  */
 package ec.javier.pp.license;
 
 /**
  * 
- * @author javier
+ * @author Javier Borja
  *
  */
 public class License {

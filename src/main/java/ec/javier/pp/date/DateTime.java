@@ -1,6 +1,5 @@
 /**
  * Class DateTime.java created 13 Mar 2018
- * Copyright javier All rights reserved
  */
 package ec.javier.pp.date;
 
@@ -12,7 +11,7 @@ import java.time.format.DateTimeParseException;
 import java.util.Locale;
 
 /**
- * @author javier
+ * @author Javier Borja
  *
  */
 public class DateTime {

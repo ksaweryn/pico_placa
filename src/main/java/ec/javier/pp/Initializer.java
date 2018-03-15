@@ -1,3 +1,6 @@
+/**
+ * Class Initializer.java created 13 Mar 2018
+ */
 package ec.javier.pp;
 
 import java.time.LocalDate;
@@ -6,6 +9,11 @@ import java.time.LocalTime;
 import ec.javier.pp.date.DateTime;
 import ec.javier.pp.license.License;
 
+/**
+ * 
+ * @author Javier Borja
+ *
+ */
 public class Initializer {
 
 	public static void main(String[] args) {

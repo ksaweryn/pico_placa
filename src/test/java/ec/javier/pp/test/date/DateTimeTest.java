@@ -1,10 +1,9 @@
 /**
  * Class DateTimeTest.java created 13 Mar 2018
- * Copyright javier All rights reserved
  */
 package ec.javier.pp.test.date;
 
-import static org.hamcrest.core.Is.is;
+import static org.hamcrest.CoreMatchers.isA;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -19,7 +18,7 @@ import ec.javier.pp.date.DateTime;
 import ec.javier.pp.license.License;
 
 /**
- * @author javier
+ * @author Javier Borja
  *
  */
 public class DateTimeTest {
@@ -42,7 +41,7 @@ public class DateTimeTest {
 
 	@Test
 	public void shouldReturnDate() {
-		assertThat(DateTime.returnDate(tuesday), is(LocalDate.class));
+		assertThat(DateTime.returnDate(tuesday), isA(LocalDate.class));
 	}
 
 	@Test
@@ -56,7 +55,7 @@ public class DateTimeTest {
 
 	@Test
 	public void shouldReturnTime() {
-		assertThat(DateTime.returnTime("23:23"), is(LocalTime.class));
+		assertThat(DateTime.returnTime("23:23"), isA(LocalTime.class));
 	}
 
 	@Test
@@ -65,6 +64,12 @@ public class DateTimeTest {
 		assertTrue(DateTime.isTimeInRestrictionPeriod(time));
 
 		time = DateTime.returnTime(morningUnrestriction);
+		assertFalse(DateTime.isTimeInRestrictionPeriod(time));
+		
+		time = DateTime.returnTime(morningRestriction);
+		assertTrue(DateTime.isTimeInRestrictionPeriod(time));
+		
+		time = DateTime.returnTime(afternoonUnrestriction);
 		assertFalse(DateTime.isTimeInRestrictionPeriod(time));
 	}
 }
