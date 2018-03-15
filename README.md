@@ -1,5 +1,4 @@
 # pico_placa
-StackBuilder question
 
 I am trying to:
 
