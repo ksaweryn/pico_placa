@@ -3,7 +3,7 @@
  */
 package ec.javier.pp.test.license;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +11,7 @@ import org.junit.Test;
 import ec.javier.pp.license.License;
 
 /**
+ * Test class for License class
  * @author Javier Borja
  *
  */

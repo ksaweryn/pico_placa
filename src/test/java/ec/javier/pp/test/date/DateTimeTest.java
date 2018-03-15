@@ -18,6 +18,7 @@ import ec.javier.pp.date.DateTime;
 import ec.javier.pp.license.License;
 
 /**
+ * Test class for DateTime class
  * @author Javier Borja
  *
  */
