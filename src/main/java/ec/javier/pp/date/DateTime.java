@@ -74,6 +74,8 @@ public class DateTime {
 		if (dayOfWeek.getValue() >= 1 && dayOfWeek.getValue() <= 5) {
 			return isVehicleWithRestriction(dayOfWeek, day);
 		}
+		System.out.println(
+				"Your car DOES NOT have 'Pico y Placa' the " + date);
 		return Boolean.FALSE;
 	}
 
