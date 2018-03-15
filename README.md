@@ -12,6 +12,7 @@ To run the program please use jdk 8, then open your terminal/cmd and execute:
 java -jar pico-placa-1.0.0-SNAPSHOT.jar vehicleLicense date time 
 
 E.g., 
-pico-placa-1.0.0-SNAPSHOT.jar PTJ0001 10-03-2018 19:15
+
+java -jar pico-placa-1.0.0-SNAPSHOT.jar PTJ0001 10-03-2018 19:15
   
 Please replace the input args as requiered.
