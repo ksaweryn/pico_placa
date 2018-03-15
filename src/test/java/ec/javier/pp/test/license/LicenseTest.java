@@ -17,21 +17,26 @@ import ec.javier.pp.license.License;
  */
 public class LicenseTest {
 
-	private static String licenseNumber;
-	private static License license;
+	private static String license;
 
 	@Before
 	public void initializer() {
-		licenseNumber = "POK0808";
-		license = new License(licenseNumber);
+		license = "POK0808";
 
 	}
 
 	@Test
 	public void shouldReturnLastLicenseCharacter() {
-		char lastCharacter = license.returnLastLicenseCharacter(licenseNumber);
-		assertEquals('8', lastCharacter);
+		int lastCharacter = License.returnLastLicenseCharacter(license);
+		assertEquals(8, lastCharacter);
 
+	}
+	
+	@Test
+	public void shouldreturnDayOfRestriction() {
+		int lastCharacter = License.returnLastLicenseCharacter(license);
+		int day = License.returnRestrictionDay(lastCharacter);
+		assertEquals(4, day);
 	}
 
 }

@@ -5,7 +5,9 @@
 package ec.javier.pp.test.date;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -14,6 +16,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ec.javier.pp.date.DateTime;
+import ec.javier.pp.license.License;
 
 /**
  * @author javier
@@ -21,30 +24,47 @@ import ec.javier.pp.date.DateTime;
  */
 public class DateTimeTest {
 
-	private static DateTime dateTime;
-	private static String date;
-	private static String time;
+	private static String tuesday, thursday, saturday;
+	private static String morningUnrestriction, morningRestriction, afternoonUnrestriction, afternoonRestriction;
+	private static int licenseLastDigit;
 
 	@Before
 	public void initialize() {
-		date = "13-03-2018";
-		time = "11:23";
-		dateTime = new DateTime(date, time);
+		tuesday = "13-03-2018";
+		thursday = "15-03-2018";
+		saturday = "17-03-2018";
+		morningUnrestriction = "06:05";
+		morningRestriction = "08:31";
+		afternoonUnrestriction = "15:59";
+		afternoonRestriction = "17:05";
+		licenseLastDigit = 7;
 	}
 
 	@Test
 	public void shouldReturnDate() {
-		assertThat(dateTime.returnDate("13-03-2018"), is(LocalDate.class));
-		LocalDate localDate = dateTime.returnDate("13-03-2018");
-		System.out.println(localDate.getDayOfWeek());
-		//getWeekDay -- ENUM
+		assertThat(DateTime.returnDate(tuesday), is(LocalDate.class));
+	}
+
+	@Test
+	public void shouldDecidePicoPlacaDay() {
+		LocalDate localDate = DateTime.returnDate(thursday);
+		assertTrue(DateTime.hasPicoPlaca(License.returnRestrictionDay(licenseLastDigit), localDate));
+
+		localDate = DateTime.returnDate(saturday);
+		assertFalse(DateTime.hasPicoPlaca(License.returnRestrictionDay(licenseLastDigit), localDate));
 	}
 
 	@Test
 	public void shouldReturnTime() {
-		assertThat(dateTime.returnTime("23:23"), is(LocalTime.class));
-		LocalTime localTime = dateTime.returnTime("23:23");
-		System.out.println(localTime);
+		assertThat(DateTime.returnTime("23:23"), is(LocalTime.class));
 	}
 
+	@Test
+	public void shouldDecideRestrictionPeriod() {
+		LocalTime time = DateTime.returnTime(afternoonRestriction);
+		assertTrue(DateTime.isTimeInRestrictionPeriod(time));
+
+		time = DateTime.returnTime(morningUnrestriction);
+		assertFalse(DateTime.isTimeInRestrictionPeriod(time));
+	}
 }

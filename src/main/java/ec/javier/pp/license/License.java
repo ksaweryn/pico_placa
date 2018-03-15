@@ -13,12 +13,24 @@ public class License {
 
 	String licenseNumber;
 
+	public License() {
+
+	}
+
 	public License(String licenseNumber) {
 		this.licenseNumber = licenseNumber;
 	}
 
-	public char returnLastLicenseCharacter(String licenseNumber) {
-		return licenseNumber.charAt(licenseNumber.length() - 1);
+	public static int returnLastLicenseCharacter(String licenseNumber) {
+		return Integer.valueOf(licenseNumber.substring(licenseNumber.length() - 1, licenseNumber.length()));
+	}
+
+	public static int returnRestrictionDay(int digit) {
+		int day = digit;
+		if (digit % 2 > 0) {
+			day += 1;
+		}
+		return day / 2;
 	}
 
 }
