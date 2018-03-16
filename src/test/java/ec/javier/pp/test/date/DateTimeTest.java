@@ -36,7 +36,7 @@ public class DateTimeTest {
 	private static final int seven = 7;
 	private static final int eight = 8;
 	private static final int nine = 9;
-	private static final int zero = 0;
+	private static final int zero = 10;
 
 	@Before
 	public void initialize() {
