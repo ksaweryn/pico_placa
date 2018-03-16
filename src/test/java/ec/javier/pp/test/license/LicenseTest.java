@@ -25,16 +25,16 @@ public class LicenseTest {
 	}
 
 	@Test
-	public void shouldReturnLastLicenseCharacter() {
-		int lastCharacter = License.returnLastLicenseCharacter(license);
-		assertEquals(8, lastCharacter);
+	public void shouldReturnLastLicenseNumber() {
+		int lastNumber = License.returnLastLicenseNumber(license);
+		assertEquals(8, lastNumber);
 
 	}
 	
 	@Test
 	public void shouldreturnDayOfRestriction() {
-		int lastCharacter = License.returnLastLicenseCharacter(license);
-		int day = License.returnRestrictionDay(lastCharacter);
+		int lastNumber = License.returnLastLicenseNumber(license);
+		int day = License.returnRestrictionDay(lastNumber);
 		assertEquals(4, day);
 	}
 

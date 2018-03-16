@@ -18,9 +18,12 @@ public class License {
 	 *            String form the vehicle license
 	 * @return int
 	 */
-	public static Integer returnLastLicenseCharacter(String licenseNumber) {
+	public static Integer returnLastLicenseNumber(String licenseNumber) {
+		final int lastNumber;
 		try {
-			return Integer.valueOf(licenseNumber.substring(licenseNumber.length() - 1, licenseNumber.length()));
+			lastNumber = Integer
+					.valueOf(licenseNumber.substring(licenseNumber.length() - 1, licenseNumber.length()));
+			return lastNumber == 0 ? 10 : lastNumber;
 		} catch (NumberFormatException e) {
 			System.out.println("Please insert the vehicle license in the next pattern POK0808");
 			System.out.println("Please restart");

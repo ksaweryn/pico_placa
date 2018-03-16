@@ -42,12 +42,12 @@ public class Initializer {
 		date = args[1];
 		time = args[2];
 
-		int lastDigit = License.returnLastLicenseCharacter(license);
+		int lastNumber = License.returnLastLicenseNumber(license);
 
 		LocalDate localDate = DateTime.returnDate(date);
 		LocalTime localTime = DateTime.returnTime(time);
 
-		if (DateTime.hasPicoPlaca(License.returnRestrictionDay(lastDigit), localDate)) {
+		if (DateTime.hasPicoPlaca(License.returnRestrictionDay(lastNumber), localDate)) {
 			if (DateTime.isTimeInRestrictionPeriod(localTime)) {
 				System.out.println(
 						"Your car with license " + license + " HAS 'Pico y Placa' the " + date + " at " + time);
@@ -55,6 +55,8 @@ public class Initializer {
 				System.out.println("Your car with license " + license + " DOES NOT have 'Pico y Placa' the " + date
 						+ " at " + time);
 			}
+		} else {
+			System.out.println("Your car with license " + license + " DOES NOT have 'Pico y Placa' the " + date);
 		}
 	}
 
