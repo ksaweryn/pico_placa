@@ -13,6 +13,7 @@ After building the jar plese run the program.
 Open your terminal/cmd and execute:
 
 cd target
+
 java -jar pico-placa-1.0.0-SNAPSHOT.jar vehicleLicense date time
 
 E.g.,
