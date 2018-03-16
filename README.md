@@ -18,6 +18,6 @@ Open your terminal/cmd and execute:
 
 E.g.,
 
-java -jar pico-placa-1.0.0-SNAPSHOT.jar PTJ0001 10-03-2018 19:15
+`java -jar pico-placa-1.0.0-SNAPSHOT.jar PTJ0001 10-03-2018 19:15`
 
 Please replace the input arguments as requiered.
