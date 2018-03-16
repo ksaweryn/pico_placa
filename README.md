@@ -9,9 +9,10 @@ This program uses maven version 3.5.2 and java version 8u152-zulu
 To compile please use:
 mvn clean install
 
-After building the jar plese run the program.
+After building the jar plese run the program. 
 Open your terminal/cmd and execute:
 
+cd target
 java -jar pico-placa-1.0.0-SNAPSHOT.jar vehicleLicense date time
 
 E.g.,
