@@ -12,9 +12,9 @@ mvn clean install
 After building the jar plese run the program. 
 Open your terminal/cmd and execute:
 
-`$ cd target
+`$ cd target`
 
-$ java -jar pico-placa-1.0.0-SNAPSHOT.jar vehicleLicense date time`
+`$ java -jar pico-placa-1.0.0-SNAPSHOT.jar vehicleLicense date time`
 
 E.g.,
 
